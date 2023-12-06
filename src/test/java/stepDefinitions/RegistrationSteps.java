@@ -4,8 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import pageObjects.RegistrationPage;
@@ -18,8 +20,10 @@ public class RegistrationSteps {
     public RegistrationPage registrationPage;
 
     public RegistrationSteps(){
-     System.setProperty("webdriver.firefox.driver", "C:/Users/Nelly/IdeaProjects/DeceSeleniumProject/src/test/resources/driver/geckodriver.exe");
-      driver = new FirefoxDriver();
+    // System.setProperty("webdriver.firefox.driver", "C:/Users/Nelly/IdeaProjects/DeceSeleniumProject/src/test/resources/driver/geckodriver.exe");
+   //   driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver= new ChromeDriver();
       registrationPage = new RegistrationPage(driver);
     }
     @Given("^I navigate to the website$")

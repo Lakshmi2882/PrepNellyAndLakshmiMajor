@@ -26,10 +26,12 @@ public class RegistrationPage extends BasePage {
    @FindBy(xpath = "//*[@id=\"header\"]/div/div[2]/div/div/div/div[3]/a[2]/span")
    private WebElement signUpButton;
 
-   @FindBy(css = "#stm-lms-register > form > div:nth-child(1) > div:nth-child(1) > div > input")
+ //  @FindBy(css = "#stm-lms-register > form > div:nth-child(1) > div:nth-child(1) > div > input")
+    @FindBy(name="user_login")
     private WebElement username;
 
-   @FindBy(xpath = "//*[@id=\"stm-lms-register\"]/form/div[1]/div[2]/div/input")
+ //  @FindBy(xpath = "//*[@id=\"stm-lms-register\"]/form/div[1]/div[2]/div/input")
+   @FindBy(name="user_password")
     private WebElement email;
 
     @FindBy(xpath = "//*[@id=\"stm-lms-register\"]/form/div[2]/div[1]/div/input")
@@ -58,11 +60,11 @@ public class RegistrationPage extends BasePage {
   }
 
    public void enterUsername(){
-       username.sendKeys("Lira");
+       username.sendKeys("Ll");
    }
 
    public void enterEmail(){
-       email.sendKeys("Lira@yahoo.com");
+       email.sendKeys("Ll@gmail.com");
    }
 
    public void enterPassword(){
